@@ -29,7 +29,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const loginSection = document.getElementById("introSection");
+const loginSection = document.getElementById("loginSection");
+const introSection = document.getElementById("introSection");
 const patientSection = document.getElementById("patientSection");
 
 const emailInput = document.getElementById("email");
@@ -46,9 +47,7 @@ loginBtn.addEventListener("click", async () => {
       emailInput.value.trim(),
       passwordInput.value
     );
-        loginSection.hidden = true;
-    introSection.hidden = true;
-    patientSection.hidden = false;
+       
   } catch (error) {
     loginMessage.textContent = "Login failed: " + error.message;
   }
@@ -522,6 +521,61 @@ nutritionButton.addEventListener("click", async () => {
 });
 
 dashboard.append(nutritionButton);
+
+const physicalProfileButton = document.createElement("button");
+physicalProfileButton.textContent = "Physical & Health Profile";
+
+physicalProfileButton.addEventListener("click", async () => {
+  const departmentDetails = document.getElementById("departmentDetails");
+  departmentDetails.replaceChildren();
+
+  const title = document.createElement("h2");
+  title.textContent = "Physical & Health Profile";
+  departmentDetails.append(title);
+
+  try {
+    const profileRef = collection(patientDocRef, "physical_profile");
+    const profileSnapshot = await getDocs(profileRef);
+
+    if (profileSnapshot.empty) {
+      departmentDetails.append("No physical profile found.");
+      return;
+    }
+
+    const profile = profileSnapshot.docs
+      .map(document => document.data())
+      .find(data => data.patientId === patient.patientId)
+      || profileSnapshot.docs[0].data();
+
+    const details = [
+      ["Patient ID", profile.patientId],
+      ["Height", profile.height],
+      ["Weight", profile.weight],
+      ["Blood Group", profile.bloodGroup],
+      ["Age", profile.age],
+      ["Gender", profile.gender],
+      ["BMI", profile.bmi],
+      ["Daily Calorie Estimate", profile.dailyCalorieEstimate],
+      ["Hair Type", profile.hairType],
+      ["Hair Density", profile.hairDensity],
+      ["Hair Texture", profile.hairTexture]
+    ];
+
+    details.forEach(([label, value]) => {
+      const line = document.createElement("p");
+      line.textContent = label + ": " + (value ?? "Not available");
+      departmentDetails.append(line);
+    });
+
+  } catch (error) {
+    console.error(error);
+    departmentDetails.textContent =
+      "Unable to load physical profile.";
+  }
+});
+
+dashboard.append(physicalProfileButton);
+
 result.append(dashboard);
 
   } catch (error) {
@@ -537,3 +591,17 @@ const qrPatientId = qrParams.get("patientId");
 if (qrPatientId) {
   patientInput.value = qrPatientId;
 }
+onAuthStateChanged(auth, (user) => {
+  loginSection.hidden = !!user;
+  introSection.hidden = !!user;
+  patientSection.hidden = !user;
+
+  if (user) {
+    loginMessage.textContent = "";
+
+    if (qrPatientId) {
+      patientInput.value = qrPatientId;
+      searchBtn.click();
+    }
+  }
+});
