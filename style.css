@@ -1,0 +1,578 @@
+
+/* MEDGUARD — MINIMAL PREMIUM DESIGN */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --background: #000000;
+  --white: #000000;
+  --text: #55B77D;
+  --muted: #FFFFFF;
+  --border: #252525;
+  --green: #55B77D;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  background: #000000;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+button, input {
+  font: inherit;
+}
+
+/* HEADER */
+
+.navbar {
+  height: 82px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.brand-mark {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--green);
+  color: white;
+  font-size: 22px;
+}
+
+.nav-caption {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* MAIN */
+
+.main-container {
+  width: min(1050px, 88%);
+  margin: 0 auto;
+  padding: 75px 0 85px;
+}
+
+/* INTRODUCTION */
+
+.intro {
+  margin-bottom: 45px;
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.intro h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(36px, 5vw, 55px);
+  line-height: 1.15;
+  letter-spacing: -2.5px;
+  font-weight: 700;
+}
+
+.intro h1 span {
+  color: #628e77;
+}
+
+.intro-text {
+  max-width: 470px;
+  color: var(--muted);
+  margin-top: 17px;
+  font-size: 15px;
+}
+
+/* LOGIN CARD */
+
+.login-card {
+  width: min(465px, 100%);
+  padding: 35px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  box-shadow: 0 12px 35px rgba(30, 60, 45, 0.055);
+}
+
+.card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-heading h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 27px;
+  letter-spacing: -1px;
+}
+
+.lock-mark {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--mint);
+  color: var(--green);
+  font-size: 23px;
+}
+
+.card-description {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 8px 0 22px;
+}
+
+/* FORM */
+
+label {
+  display: block;
+  margin: 17px 0 7px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 1px solid #e0e8e2;
+  border-radius: 9px;
+  outline: none;
+  background: #fbfcfb;
+  color: var(--ink);
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+input::placeholder {
+  color: #a0aaa4;
+}
+
+input:focus {
+  border-color: #77a58b;
+  box-shadow: 0 0 0 3px rgba(100, 150, 120, 0.1);
+  background: white;
+}
+
+/* BUTTON */
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 13px 21px;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.primary-btn:hover {
+  background: #244a3d;
+  transform: translateY(-1px);
+}
+
+.login-card .primary-btn {
+  width: 100%;
+  margin-top: 23px;
+}
+
+.primary-btn span {
+  font-size: 18px;
+}
+
+.secure-note {
+  margin-top: 21px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.message {
+  margin-top: 12px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+/* PATIENT SECTION */
+
+.patient-section {
+  margin-top: 30px;
+}
+
+.patient-section h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+
+.search-panel {
+  display: flex;
+  gap: 12px;
+  padding: 22px;
+  margin-top: 22px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.search-panel input {
+  flex: 1;
+}
+
+.search-panel .primary-btn {
+  flex-shrink: 0;
+}
+
+/* PATIENT RESULTS */
+
+#result {
+  margin-top: 25px;
+  overflow-wrap: anywhere;
+}
+
+#result:empty,
+#departmentDetails:empty {
+  display: none;
+}
+
+.patient-dashboard {
+  margin-top: 20px;
+  padding: 27px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(30, 60, 45, 0.04);
+}
+
+.patient-dashboard h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.patient-dashboard p {
+  padding: 11px 14px;
+  margin: 7px 0;
+  background: #f6f9f6;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.patient-dashboard h3 {
+  margin-top: 23px;
+  padding-top: 17px;
+  border-top: 1px solid var(--border);
+  color: var(--green);
+}
+
+/* DEPARTMENT CARDS */
+
+.department-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 13px;
+  margin-top: 16px;
+}
+
+.department-item {
+  padding: 17px;
+  background: #f8faf8;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.department-item:hover {
+  background: var(--mint);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* LAB REPORT AND ALLERGY BUTTONS */
+
+#result button {
+  margin: 17px 9px 0 0;
+  padding: 12px 18px;
+  background: var(--mint);
+  color: var(--green);
+  border: 1px solid #cfe6d8;
+  border-radius: 9px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#result button:hover {
+  background: var(--green);
+  color: white;
+}
+
+/* DETAILS */
+
+#departmentDetails {
+  margin-top: 22px;
+  padding: 25px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow-wrap: anywhere;
+}
+
+#departmentDetails h2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 23px;
+  margin-bottom: 17px;
+  color: var(--green);
+}
+
+#departmentDetails p {
+  padding: 13px 15px;
+  margin: 9px 0;
+  background: #f7faf7;
+  border-left: 3px solid #86b99a;
+  border-radius: 7px;
+  font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+  min-height: 75px;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: white;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+footer strong {
+  color: var(--green);
+  font-size: 17px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .navbar {
+    height: 70px;
+    padding: 0 5%;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .nav-caption {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .main-container {
+    width: 90%;
+    padding: 48px 0;
+  }
+
+  .intro h1 {
+    font-size: 39px;
+    letter-spacing: -1.5px;
+  }
+
+  .login-card {
+  width: min(600px, 100%);
+  padding: 42px;
+  margin-left: auto;
+  margin-right: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  box-shadow: 0 12px 35px rgba(30, 60, 45, 0.055);
+}
+
+  .search-panel {
+    flex-direction: column;
+    padding: 17px;
+  }
+
+  .search-panel .primary-btn {
+    width: 100%;
+  }
+
+  .department-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* MedGuard horizontal login layout */
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr minmax(360px, 600px);
+  align-items: center;
+  gap: 60px;
+  min-height: 75vh;
+}
+
+.intro {
+  margin-bottom: 0;
+}
+
+.login-card {
+  width: 100%;
+  margin: 0;
+}
+
+.patient-section {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 760px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .login-card {
+    width: 100%;
+  }
+}
+h1, h2, h3, .brand {
+  color: #55B77D;
+}
+
+.eyebrow {
+  color: #55B77D;
+}
+
+button {
+  background: #55B77D;
+  color: #000000;
+  border: none;
+}
+
+input {
+  background: #080808;
+  color: #FFFFFF;
+  border: 1px solid #55B77D;
+}
+
+input::placeholder {
+  color: #888888;
+}
+
+.login-card,
+.search-panel {
+  background: #000000;
+  border: 1px solid #252525;
+}
+
+/* MEDGUARD - PURE BLACK AND GREEN THEME */
+
+html,
+body,
+body * {
+  background: #000000 !important;
+  color: #55B77D !important;
+  border-color: #245C3B !important;
+}
+
+/* All headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #55B77D !important;
+}
+
+/* All buttons */
+button {
+  background: #000000 !important;
+  color: #55B77D !important;
+  border: 1px solid #55B77D !important;
+  cursor: pointer;
+}
+
+/* Input fields */
+input,
+textarea,
+select {
+  background: #000000 !important;
+  color: #55B77D !important;
+  border: 1px solid #55B77D !important;
+}
+
+/* Placeholder text */
+input::placeholder,
+textarea::placeholder {
+  color: #55B77D !important;
+  opacity: 0.7;
+}
+
+/* Button hover */
+button:hover {
+  background: #55B77D !important;
+  color: #000000 !important;
+}
+
+/* Larger and clearer department names */
+
+.department-card,
+.department-card button {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  padding: 16px !important;
+  text-align: center;
+}
+
+.department-card h3,
+.department-card h4 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+}

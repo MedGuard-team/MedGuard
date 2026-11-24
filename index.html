@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedGuard | Health Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="brand">
+      <span class="brand-mark">M</span>
+      <span>MedGuard</span>
+    </div>
+    <span class="nav-caption">PATIENT HEALTH PORTAL</span>
+  </header>
+
+  <main class="main-container">
+
+    <section class="intro" id="introSection">
+      <p class="eyebrow">SMART HEALTH MANAGEMENT</p>
+      <h1>Healthcare information,<br><span>all in one place.</span></h1>
+      <p class="intro-text">
+        A simple and organized way to access patient records
+        and medical department information.
+      </p>
+    </section>
+
+    <section class="login-card" id="loginSection">
+      <div class="card-heading">
+        <div>
+          <p class="eyebrow">STAFF PORTAL</p>
+          <h2>Welcome back</h2>
+        </div>
+        <span class="lock-mark">⌑</span>
+      </div>
+
+      <p class="card-description">Sign in to continue to your workspace.</p>
+
+      <label for="email">Email address</label>
+      <input id="email" type="email" placeholder="Enter your staff email">
+
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Enter your password">
+
+      <button id="loginBtn" class="primary-btn">Sign in <span>→</span></button>
+      <p id="loginMessage" class="message"></p>
+
+      <p class="secure-note">Secure access · Authorized staff only</p>
+    </section>
+
+    <section class="patient-section" id="patientSection" hidden>
+      <p class="eyebrow">PATIENT WORKSPACE</p>
+      <h2>Patient records</h2>
+      <p class="card-description">
+        Search using the unique patient identification number.
+      </p>
+
+      <div class="search-panel">
+        <input id="patientId" type="text" placeholder="Enter Patient ID (e.g. MG001)">
+        <button id="searchBtn" class="primary-btn">Search patient →</button>
+      </div>
+
+      <div id="result"></div>
+      <div id="departmentDetails"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>MedGuard</strong>
+    <span>Student demonstration project · Fictional sample records</span>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
