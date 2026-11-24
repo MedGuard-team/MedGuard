@@ -530,3 +530,10 @@ result.append(dashboard);
       "Unable to connect. Check Firebase configuration and permissions.";
   }
 });
+
+const qrParams = new URLSearchParams(window.location.search);
+const qrPatientId = qrParams.get("patientId");
+
+if (qrPatientId) {
+  patientInput.value = qrPatientId;
+}
