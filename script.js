@@ -558,7 +558,7 @@ physicalProfileButton.addEventListener("click", async () => {
       ["Daily Calorie Estimate", profile.dailyCalorieEstimate],
       ["Hair Type", profile.hairType],
       ["Hair Density", profile.hairDensity],
-      ["Hair Texture", profile.hairTexture]
+      ["Hair Texture", profile.hairtexture],
     ];
 
     details.forEach(([label, value]) => {
