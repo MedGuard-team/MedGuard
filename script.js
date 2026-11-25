@@ -408,7 +408,7 @@ measurementsButton.addEventListener("click", async () => {
       const data = measurementDoc.data();
 
       const details = [
-        ["Measurement Type", data["measurement Type"]],
+        ["Measurement Type", data["mesurement Type"]],
         ["Value", data.value],
         ["Unit", data.unit],
         ["Record Date", data["record date"]],
